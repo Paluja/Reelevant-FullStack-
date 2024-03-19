@@ -1,41 +1,16 @@
-Los tres pilares de la Web
+Curriculum Vitae de Bruce Wayne
 
+Datos personales
+ Nombre completo: Bruce Wayne
+ Fecha de nacimiento: 1/5/1939
+ Lugar de nacimiento: Gotham City
 
-Tim Berners-Lee es considerado el padre de la Web porque desarrolló los tres elementos básicos para el funcionamiento de la Web:
+Formación académica
+ 1956-1961: Universidad del Espantapájaros
+ 1952-1956: Instituto de Dos Caras
+ 1944-1952: Escuela Primaria del Joker
 
-
-HTML
-HTTP
-URL
-
-
-HTML
-
-
-HTML, siglas de HyperText Markup Language, hace referencia al lenguaje de marcado para la elaboración de páginas web. Es un estándar que sirve de referencia para la elaboración de páginas web en sus diferentes versiones, define una estructura básica y un código (denominado código HTML) para la definición de contenido de una página web, como texto, imágenes, entre otros. Es un estándar a cargo de la W3C, organización dedicada a la estandarización de casi todas las tecnologías ligadas a la web, sobre todo en lo referente a su escritura e interpretación. Es el lenguaje con el que se definen las páginas web.
-
-
-
-Fuente: HTML, Wikipedia
-
-
-
-HTTP
-
-
-Hypertext Transfer Protocol o HTTP (en español protocolo de transferencia de hipertexto) es el protocolo usado en cada transacción de la World Wide Web. HTTP fue desarrollado por el World Wide Web Consortium y la Internet Engineering Task Force, colaboración que culminó en 1999 con la publicación de una serie de RFC, el más importante de ellos es el RFC 2616 que especifica la versión 1.1.
-
-
-
-Fuente: HTTP, Wikipedia
-
-
-
-URL
-
-
-Un localizador de recursos uniforme o URL —siglas en inglés de Uniform Resource Locator— es un identificador de recursos uniforme (URI) cuyos recursos referidos pueden cambiar, esto es, la dirección puede apuntar a recursos variables en el tiempo. Están formados por una secuencia de caracteres, de acuerdo a un formato modélico y estándar, que designa recursos en una red, como Internet.
-
-
-
-Fuente: URL, Wikipedia
+Experiencia laboral
+ 1975-1985: En el paro
+ 1965-1975: Cazavillanos y demás chusma
+ 1962-1965: Aprendiz de superhéroe

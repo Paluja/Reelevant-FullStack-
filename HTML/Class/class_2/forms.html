@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FORMULARIOS</title>
+  </head>
+  <!--PARA LAS SEPARACIONES MEJOR METER CADA INPUTO JUNTO CON EL LABEL DENTRO DE UN DIV -->
+  <body>
+    <h1>Formularios</h1>
+    <form action="#" method="#">
+      <!--Method POST (Registro); Method GET (Inicio de Sesión "comprueba datos con la BDD")-->
+
+      <label for="nombre">Nombre: </label>
+      <input type="text" name="nombre" id="nombre" />
+      <!--nombre: valor del input-->
+
+      <input
+        type="email"
+        name="correo"
+        id="correo"
+        placeholder="Place your email"
+      />
+      <!--ya vavlida que sea un correo-->
+
+      <input
+        type="password"
+        name="contrasenya"
+        id="contraseyna"
+        placeholder="contrasenya"
+        required
+      />
+
+      <input type="number" name="Tlf" id="Tlf" placeholder="Teléfono" />
+      <!--no deja letras-->
+
+      <input type="submit" value="Enviar" />
+
+      <input type="reset" value="Limpiar campos" />
+
+      <button type="submit">Enviar</button>
+    </form>
+
+    <form>
+      <h3>Elige tu género</h3>
+      <input type="radio" id="masculino" name="genero" value="Masculino" />
+      <label for="masculino">Masculino</label>
+      <br />
+      <input type="radio" id="femenino" name="genero" value="Femenino" />
+      <label for="femenino">Femenino</label>
+      <br />
+      <input type="radio" id="otro" name="genero" value="Otro" checked />
+      <!--checked: por defecto-->
+      <label for="otro">Ente Errante</label>
+      <!--Backend (genero : value del input)-->
+
+      <h3>Elige tu vehiculo</h3>
+      <input type="checkbox" name="vehivulo1" id="coche" value="coche" />
+      <label for="coche">Coche</label>
+      <br />
+      <input type="checkbox" name="vehivulo2" id="moto" value="moto" />
+      <label for="coche">Moto</label>
+      <br />
+      <input type="checkbox" name="vehivulo4" id="Bicicleta" value="Bici" />
+      <label for="coche">Bici</label>
+
+      <h3>Elige tu pais</h3>
+      <select name="pais">
+        <optgroup label="EUROPA">
+          <option value="ES">España</option>
+          <option value="FR">Francia</option>
+          <option value="IT">Italia</option>
+          <option value="AL">Alemania</option>
+        </optgroup>
+        <optgroup label="America">
+          <option value="MX">Mexico</option>
+          <option value="UR">Uruguay</option>
+          <option value="SA">Salvador</option>
+          <option value="EEUU">EEUU</option>
+        </optgroup>
+      </select>
+      <br /><br />
+      <!--Backend-->
+      <input type="file" name="archivo" id="archivo" /><br /><br />
+
+      <label for="birthdate">Fecha de nacimeinto</label><br />
+      <input type="date" name="birthdate" id="birthdate" />
+
+      <input type="color" /><br /><br />
+
+      <button type="submit">Enviar formulario</button>
+    </form>
+
+    <!--PARA REAGRUPAT DATOS-->
+    <form>
+      <fieldset>
+        <legend>Datos Personales</legend>
+        <label for="nombre">Nombre: </label>
+        <input type="text" name="nombre" id="nombre" />
+        <!--nombre: valor del input-->
+
+        <input
+          type="email"
+          name="correo"
+          id="correo"
+          placeholder="Place your email"
+        />
+        <!--ya vavlida que sea un correo-->
+
+        <input
+          type="password"
+          name="contrasenya"
+          id="contraseyna"
+          placeholder="contrasenya"
+          required
+        />
+
+        <textarea
+          rows="10"
+          cols="30"
+          placeholder="Quiero mas informacion"
+        > <!--Si se escribe aqui es un texto literal--></textarea> <br><br>
+		<button type="submit">Enviar formulario</button>
+      </fieldset>
+    </form>
+  </body>
+</html>

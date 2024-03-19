@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario EJ2</title>
+  </head>
+  <body>
+    <h1>Formulario de registro</h1>
+    <form>
+      <label for="nombre"
+        >Nombre: <input type="text" name="nombre" id="nombre" /> <br />
+        <br />
+      </label>
+      <label for="apellido"
+        >Apellido: <input type="text" name="apellido" id="apellido" />
+        <br /><br />
+      </label>
+
+      <label>Sexo:</label>
+      <input type="radio" id="masculino" name="genero" value="Masculino" />
+      <label for="masculino">Masculino</label>
+      <input type="radio" id="femenino" name="genero" value="Femenino" checked />
+      <label for="femenino">Femenino</label>
+      <br /><br />
+
+      <label for="correo">Correo: </label>
+      <input type="email" name="correo" id="correo" /> <br> <br>
+
+    <label>
+        Pobalción:
+        <select name="pais">
+            <option value="ES">España</option>
+            <option value="ES">Ciudad del Vaticano</option>
+            <option value="ES">Andorra</option>
+      </select>
+    </label>
+
+    <br> <br>
+    <label for="text">Descripción</label>
+    <textarea name="text" id="text" cols="90" rows="10"></textarea>
+    <br><br>
+
+    <input type="checkbox" name="ads" id="ads" value="ad_check">
+    <label for="ads">Deseo recibir publicidad</label>
+    <br><br>
+    <input type="checkbox" name="priv" id="priv" value="priv_check">
+    <label for="priv">Acepto el contrato de privacidad</label>
+    <br><br>
+    <input type="" name="" id="">
+    <br><br>
+    <button type="submit">Enviar</button>
+    </form>
+  </body>
+</html>
