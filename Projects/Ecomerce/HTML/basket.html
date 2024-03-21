@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+      src="https://kit.fontawesome.com/229ae1f3a8.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+</head>
+<body>
+  <header>
+    <div class = "logo">
+      <h2>Carrito</h2>
+      <img src="../assets/images/logo/mainlogo.png" alt="Logo principal">
+    </div>
+    <div class = "buy_setps">
+      <ul>
+        <li><span style="color:green;">Carrito</span></li>
+        <li>Forma de pago</li>
+        <li>Finalizar pedido</li>
+      </ul>
+    </div>
+  </header>
+
+
+
+    <main>
+        
+      <div class = "title">
+        <h1>Mi carrito</h1>
+        <button><a href="home.html">Seguir comprando</a></button>
+      </div>
+        <section class="basket">
+            <div class = "articles">
+                <article class="basket_article">
+                    <img src="../assets/images/products/flowers/flower1.jpg" alt="flower1" />
+                    <h3>Cali Orange</h3>
+                    <p>2g 5,64€/gr<p>
+                    <p>Total: 11,28</p>
+                    <input type="number" name="quantity" class="b_quantity">
+                    <button>Eliminar</button>
+                </article>
+            </div>
+            <div class="resume">
+                <h3>Resumen del pedido</h3>
+                <p>Continuar con el proceso de compra</p>
+                <h3>11,28€</h3>
+                <a href="payment.html"><button>Proceder al Pago</button></a>
+            </div>
+        </section>
+
+        <section class="flowers">
+            <div class="prods_title">
+              <h1>Nuestros clientes tambien compraron</h1>
+            </div>
+              <article div="f1">
+                <a href="flower1.html"
+                  ><img
+                    src="../assets/images/products/flowers/flower1.jpg"
+                    alt="flower1"
+                /></a>
+                <button><a href="basket.html">Añadir al carrito</a></button>
+                <h4>Cali Orange</h4>
+                <p>5,64€/g</p>
+                <!--Cambiar segun la cantclassad-->
+                <button type="button" class="grams">2g</button>
+              </article>
+        </section>
+    </main>
+
+    <section id="icons">
+        <article>
+          <img
+            src="../assets/images/icons/scurepay.png"
+            alt="logo pago seguro"
+            width="5%"
+          />
+          <h5>Pago Seguro</h5>
+          <h6>100% redy</h6>
+        </article>
+        <article>
+          <img
+            src="../assets/images/icons/freecharges.png"
+            alt="Envio Gratis"
+            width="5%"
+          />
+          <h5>Envio Gratis</h5>
+          <h6>Todos los pedidos + 50€</h6>
+        </article>
+        <article>
+          <img
+            src="../assets/images/icons/qualitycheck.png"
+            alt="Control de Calidad"
+            width="5%"
+          />
+          <h5>Control de Calidad</h5>
+          <h6>Exahustivos </h6>
+        </article>
+        <article>
+          <img src="../assets/images/icons/sales.png" alt="Ofertas" width="5%" />
+          <h5>Ofertas unicas en el mercado</h5>
+          <h6>Los mejores precios del mercado</h6>
+        </article>
+      </section>
+    <footer>
+        <section>
+          <img src="../assets/images/logo/mainlogo.png" alt="logo" width="15%" />
+          <ul>
+            <li>Centro de Ayuda</li>
+            <li>Atencion al Cliente</li>
+          </ul>
+          <ul>
+            <li>Condiciones de compra</li>
+            <li><a href="conditions.html">Politica de Privacidad</a></li>
+            <li>Opiniones</li>
+          </ul>
+        </section>
+        <section>
+          <h4>Unete a nuestor newstseller</h4>
+          <form action="">
+            <input type="email" name="email" placeholder="Introduce tu email" />
+            <input type="submit" value="Enviar" />
+            <input type="checkbox" name="accept" class="accept" required />
+            <label for="accept"
+              >Acepto los
+              <a href="conditions.html"
+                ><strong>terminos de uso y privadad</strong></a
+              ></label
+            >
+          </form>
+          <a href="https://Facebook.com" target="_blank"
+            ><i class="fa-brands fa-facebook"></i>
+          </a>
+  
+          <a href="https://Instagram.com" target="_blank"
+            ><i class="fa-brands fa-square-instagram"></i>
+          </a>
+  
+          <a href="https://youtube.com" target="_blank"
+            ><i class="fa-brands fa-youtube"></i>
+          </a>
+        </section>
+      </footer>
+</body>
+</html>
