@@ -1,0 +1,20 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.box{
+    width: 100%;
+    padding: 60px;
+    background-color: #fabada;
+}
+
+.box--boderBox
+{
+    box-sizing: border-box;
+}
+.box--contentBox
+{
+    box-sizing: content-box;
+}
