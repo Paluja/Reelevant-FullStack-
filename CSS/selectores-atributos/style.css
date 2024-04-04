@@ -1,0 +1,43 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing : border-box;
+}
+
+.container{
+    max-width: 1200px;
+    padding: 50px;
+}
+
+.row{
+    padding: 40px;
+}
+
+.row[data-bgColor="black"]{
+    background-color : black;
+    color : white;
+}
+
+[data-bgColor="black"] a{
+    color : white;
+}
+
+/*pinta los enlaces que empiezan por http:// */
+[data-bgColor="black"] a[href^="http://"]{
+    color : red;
+}
+
+/*pinta los enlaces que contienen google.com */
+/* misma espicicidad, predomina el de abajo */
+[data-bgColor="black"] a[href*="google.com"]{
+    color : blue;
+}
+
+/*pinta los enlaces que terminan por ng.com */
+[data-bgColor="black"] a[href$="ng.com"]{
+    color : rgb(9, 233, 102);
+}
+
+.row[data-bgColor="red"]{
+    background-color : red;
+}

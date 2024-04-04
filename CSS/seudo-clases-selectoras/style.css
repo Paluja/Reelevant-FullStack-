@@ -1,0 +1,104 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    padding: 60px;
+}
+
+p{
+    margin-bottom: 20px;
+}
+
+.pseudo-order_child{
+    padding: 40px;
+    background-color: antiquewhite;
+}
+
+
+.pseudo-order > p{
+    color: rgb(255,157,0);
+}
+.pseudo-order >*:first-child{
+    color: blue;
+}
+
+.pseudo-order p:last-child{
+    color: red;
+}
+
+
+
+.menu{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.menu > .menu_item{
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.menu  .menu_item:first-child{
+    margin-left: 0;
+} 
+
+.menu  .menu_item:last-child{
+    margin-right: 0;
+} 
+
+/*Solo funcionaria cunado haya solo un hijo*/
+.menu li:only-child{
+    color: red;
+}
+
+.pseudo-order_child p:first-of-type{
+    color: brown;
+}
+.pseudo-order_child p:last-of-type{
+    color: red;
+}
+
+.pseudo-order_child > *:last-child{
+    color: orange;
+}
+
+.rowBox{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.rowBox_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color: rgba(0, 255, 255, 0.158);
+}
+
+
+
+.rowBox .rowBox_item:nth-child(4){
+    background-color: orange;
+}
+
+.rowBox .rowBox_item:nth-of-type(2){
+    background-color: red;
+}
+
+.rowBox span.rowBox_item:nth-of-type(2){
+    background-color: #fabada;
+}
+
+.rowBox div.rowBox_item:nth-of-type(4){
+    background-color: black;
+    color: white;
+}
