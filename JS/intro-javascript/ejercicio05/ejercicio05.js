@@ -7,7 +7,22 @@
  */
 
 function determinarTipoNumero() {
- //Escribe tu codigo aqui
+    if (isNaN(num)) {
+        if (num > 0) 
+        {
+            return("Negativo");
+        }
+        if (num < 0) 
+        {
+            return("Positivo");
+        }
+        else
+        {
+            return("Nulo");
+        }
+    } else {
+        return("Introduce un numero anda");
+    }
 }
 
 module.exports = { determinarTipoNumero };
