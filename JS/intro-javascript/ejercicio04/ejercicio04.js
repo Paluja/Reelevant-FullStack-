@@ -6,19 +6,8 @@
  *  que diga Has introducido uno o varios caracteres no validos
  */
 
-function sumOrMultiply(a,b,c) {
-    if (isNaN(a) && isNaN(b) && isNaN(c))
-    {
-        if (a < 0) {
-            return(a*b*c);
-        } else {
-            return(a+b+c);
-        }
-    }
-    else
-    {
-        console.log("Los tres tienen que ser numeros, cabezon");
-    }
+function sumOrMultiply() {
+ //Escribe tu codigo aqui
 }
 
 module.exports = { sumOrMultiply };
