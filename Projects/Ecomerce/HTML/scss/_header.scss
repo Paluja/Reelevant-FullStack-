@@ -2,14 +2,30 @@ header{
     max-width: 1200px;
     margin: 0 auto;
     .container{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .logo_wrapper{
+        width: 100%;
+        .m-header__layout{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: fit-content;
+        }
+        .m-header__bxLogo{
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            
+            a{
+                text-decoration: none;
+                display: inline-block;
+                color: inherit;
+                margin: 0;
+                padding: 0;
+                
+                // h2{
+                //     width: fit-content;
+                // }
+            }
         }
     }
 }
