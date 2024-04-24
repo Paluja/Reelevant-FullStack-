@@ -159,7 +159,7 @@ WHERE id IN (SELECT categoriaId
 -- 17.Listar los platillos cuyo precio es menor que el precio de cualquier bebida con alcohol:
 SELECT id, nombre, precio, categoriaId
 FROM platillos
-WHERE precio < ANY (SELECT DISTINCT precio
+WHERE precio < ANY (SELECT precio
 						FROM platillos 
 						WHERE categoriaId = (SELECT id 
 												FROM categoria
@@ -167,26 +167,70 @@ WHERE precio < ANY (SELECT DISTINCT precio
 
 
 -- 18.Encuentra todos los platillos que son más caros que cualquier platillo en la categoría 'Postres':
-SELECT id, nombre
+SELECT id, nombre,precio,categoriaId
 FROM platillos
-WHERE precio < ANY (SELECT precio
+WHERE precio > ANY (SELECT precio
 						FROM platillos 
-						WHERE categoriaId IN (SELECT id 
+						WHERE categoriaId = (SELECT id 
 												FROM categoria
 												WHERE nombre = 'Postres'));
 
 -- 19.Identificar platillos cuyo precio es mayor que el precio de todos los platillos de 'Postres':
+SELECT id, nombre,precio,categoriaId
+FROM platillos
+WHERE precio > ALL (SELECT precio
+						FROM platillos 
+						WHERE categoriaId = (SELECT id 
+												FROM categoria
+												WHERE nombre = 'Postres'));
+
 
 -- 20.Mostrar todos los platillos cuyo precio es inferior al precio de cualquier platillo de la categoría 'Comida':  
+SELECT id, nombre,precio,categoriaId
+FROM platillos
+WHERE precio < ANY (SELECT precio
+						FROM platillos 
+						WHERE categoriaId = (SELECT id 
+												FROM categoria
+												WHERE nombre = 'Comida'));
 
 -- 21.Listar las categorías cuyos platillos no están actualmente disponibles:
+SELECT nombre
+FROM categoria
+WHERE id IN (SELECT DISTINCT categoriaId
+			FROM platillos
+			WHERE disponible = 0);
 
 -- 22.Mostrar los platillos más caros que no están disponibles, pero cuyo precio es menor que el doble del precio mínimo de cualquier platillo disponible:
 
+SELECT *
+FROM platillos
+WHERE disponible = 0 AND precio < (SELECT 2*MIN(precio)
+							FROM platillos
+							WHERE disponible = 1)
+ORDER BY precio DESC
+LIMIT 1;
+
 -- 23.Identificar las reservaciones hechas para fechas en las cuales ningún cliente ha reservado más de dos mesas:
+SELECT *
+FROM reservaciones
+WHERE fecha NOT IN (SELECT DISTINCT fecha
+					FROM reservaciones
+					WHERE `cantidad de mesas` > 2 );
+
+SELECT *
+FROM reservaciones
+WHERE fecha NOT IN(2019-06-28, 2019-06-25, 2019-07-30, 2019-07-01, 2019-07-02);
+
+SELECT DISTINCT fecha,`cantidad de mesas`
+FROM reservaciones
+WHERE `cantidad de mesas` > 2 ;
 
 -- 24.Encontrar clientes que han reservado más de una mesa en todas sus reservaciones:    
-
+SELECT clienteId
+FROM reservaciones
+GROUP BY clienteId
+HAVING MIN(`cantidad de mesas`) > 1;
 -- 25.Listar los clientes que solo han hecho reservaciones en el año 2019: 
 
 -- 26.Listar los platillos que están temporalmente no disponibles y son más caros que el platillo más barato disponible:
