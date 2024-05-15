@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-container form1">
+        <h2>Añadir miembro</h2>
+        <form action="" id="form1">
+            <input type="text" placeholder="Introduce familiar">
+            <button class="btnAdd-member" id="btnAddMember">Añadir miembro</button>
+        </form>
+    </div>
+    <div class="form-container hidden">
+        <h2>Reparte las tareas</h2>
+        <form action="" id = "form2">
+            <input type="text" placeholder="Introduce tarea">
+            <select name="pj-selection" id="select-pj">
+                
+            </select>
+            <select name="points" id="select-points">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+            </select>
+            <button>Asignar tarea</button>
+        </form>
+    </div>
+    <div class="tasks-container hidden">
+        <h2>Tareas</h2>
+        <ul id="task-list">
+            
+        </ul>
+    </div>
+
+</body>
+<script src="script.js"></script>
+</html>

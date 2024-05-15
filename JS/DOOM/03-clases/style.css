@@ -1,0 +1,15 @@
+.container {
+    margin: 0
+}
+
+.title {
+    color: red
+}
+
+.show{
+    transform: scale(1);
+}
+
+.hide{
+    transform: scale(0);
+}
