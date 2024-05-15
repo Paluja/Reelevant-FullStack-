@@ -19,7 +19,7 @@ const nombres = ["Ana", "Juan", "María", "Pedro"];
 const buscar = "María";
 
 for (let i = 0; i < nombres.length; i++) {
-    if (nombres[i] === 'María') console.log(i);
+    if (nombres[i] === buscar) console.log(i);
 }
 
 
@@ -28,13 +28,11 @@ for (let i = 0; i < nombres.length; i++) {
 
 const arrayNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const pares = [];
-let j = 0;
 
 for (let i = 0; i < arrayNumeros.length; i++) {
     if (arrayNumeros[i] % 2 == 0)
     {
-        pares[j] = arrayNumeros[i];
-        j++;
+        pares.push(arrayNumeros[i]);
     }
 }
 console.log(pares);
@@ -50,21 +48,34 @@ console.log(meses.length);
 const primerArray = [1, 2, 3];
 const segundoArray = [4, 5, 6];
 const thirdArray = [];
-let k = 0;
 
-while (k < primerArray.length)
-{
-    thirdArray[k] = primerArray[k];
-    k++;
+for (let i = 0; i < primerArray.length; i++) {
+    thirdArray.push(primerArray[i]);
 }
 
-let x = 0;
-while (k < (primerArray.length + segundoArray.length))
-{
-    thirdArray[k] = segundoArray[x];
-    k++;
-    x++;
+console.log(thirdArray.length);
+for (let i = 0; i < (segundoArray.length); i++) {
+    thirdArray.push(segundoArray[i]);
 }
+
+
 console.log(thirdArray);
+
+// let k = 0;
+
+// while (k < primerArray.length)
+// {
+//     thirdArray[k] = primerArray[k];
+//     k++;
+// }
+
+// let x = 0;
+// while (k < (primerArray.length + segundoArray.length))
+// {
+//     thirdArray[k] = segundoArray[x];
+//     k++;
+//     x++;
+// }
+// console.log(thirdArray);
 
 
