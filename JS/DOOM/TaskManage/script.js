@@ -60,7 +60,8 @@ const addTask = (task,pjSelected,pointsSelected)=>{
     points.className = "points";
     points.textContent = pointsSelected;
     li.appendChild(points);
-    
+    const pjObj = createObject(pjSelected);
+    addToArray(pjs,pjObj);
     //eventListener para acabar la tarea
     li.addEventListener("dblclick",(e)=>{
         hiddenContainer[2].classList.remove("hidden"); 
@@ -96,10 +97,34 @@ const addMember = (member)=>{
     selectPj.appendChild(pj);
 }
 
-const createPj = (pj)=>{
+const createObject = (pj)=>{
     const pj = {
         pj: pj,
         score: 0
     }
     pjs.push(pj);
+}
+
+
+
+const addToArray = (inventory,product) =>{
+    if ((product != undefined || product != null) && findPj(inventory,product))
+        inventory.push(product);
+    else{
+        console.log("No se pudo añadir el producto vacio");
+        return null;
+    }
+    
+}
+
+const findPj = (pjArray,pj)=>{
+    const pj = pjArray.find(
+        (pj) => pj.pj === pj
+    )
+    if (pj == undefined) {
+        console.log("Personaje no encontrado");
+        return (false);
+    } 
+    console.log("Personaje encontrado con exito");
+    return (true);
 }
