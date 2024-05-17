@@ -7,7 +7,7 @@ const selectPoints = document.querySelector("#select-points");
 const taskList = document.querySelector("#task-list");
 const scoreList = document.querySelector("#score-list");
 const pjs = [];
-
+console.log(hiddenContainer);
 addForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     let input = addForm.querySelector("input");
@@ -39,8 +39,8 @@ taskForm.addEventListener("submit",(e)=>{
         return;
     } else {
         addTask(task,pjSelected,pointsSelected);
-        hiddenContainer[1].classList.remove("hidden");
         hiddenContainer[0].classList.remove("hidden");
+        hiddenContainer[2].classList.remove("hidden");
     }
     taskForm.reset();
 })
@@ -98,17 +98,17 @@ const addMember = (member)=>{
 }
 
 const createObject = (pj)=>{
-    const pj = {
+    const pjObj = {
         pj: pj,
         score: 0
     }
-    pjs.push(pj);
+    return (pjObj);
 }
 
 
 
 const addToArray = (inventory,product) =>{
-    if ((product != undefined || product != null) && findPj(inventory,product))
+    if ((product != undefined && product != null) && !findPj(inventory,product))
         inventory.push(product);
     else{
         console.log("No se pudo añadir el producto vacio");
@@ -117,9 +117,9 @@ const addToArray = (inventory,product) =>{
     
 }
 
-const findPj = (pjArray,pj)=>{
+const findPj = (pjArray,pjName)=>{
     const pj = pjArray.find(
-        (pj) => pj.pj === pj
+        (pj) => pj.pj === pjName
     )
     if (pj == undefined) {
         console.log("Personaje no encontrado");
@@ -128,3 +128,5 @@ const findPj = (pjArray,pj)=>{
     console.log("Personaje encontrado con exito");
     return (true);
 }
+
+console.log(pjs);
