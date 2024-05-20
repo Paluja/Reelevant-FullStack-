@@ -7,7 +7,7 @@ const selectPoints = document.querySelector("#select-points");
 const taskList = document.querySelector("#task-list");
 const scoreList = document.querySelector("#score-list");
 const pjs = [];
-console.log(hiddenContainer);
+
 addForm.addEventListener("submit",(e)=>{
     e.preventDefault();
     let input = addForm.querySelector("input");
@@ -51,11 +51,11 @@ const addTask = (task,pjSelected,pointsSelected)=>{
     const points = document.createElement("span");
     
     //aniadir el pj a la tarea
-    pj.className = "pj";
-    pj.textContent = pjSelected + " - ";
+    pj.className = "pj_task";
+    pj.textContent = pjSelected;
     li.appendChild(pj);
     //aniadir la tarea a la lista
-    li.append(task);
+    li.append(task + " - ");
     //aniadir los puntos a la tarea
     points.className = "points";
     points.textContent = pointsSelected;
@@ -66,7 +66,7 @@ const addTask = (task,pjSelected,pointsSelected)=>{
     li.addEventListener("dblclick",(e)=>{
         hiddenContainer[2].classList.remove("hidden"); 
         li.classList.add("done");
-        removeTask(scoreList,pjSelected,pointsSelected);
+        removeTask(scoreList,pj.textContent,points.textContent);
     });
     
     //aniadir la tarea a la lista
@@ -74,20 +74,32 @@ const addTask = (task,pjSelected,pointsSelected)=>{
 
 }
 
+
 const removeTask = (scoreList,pjSelected,pointsSelected)=>{
-    const score = document.createElement("li");
     const pj = document.createElement("span");
-    const points = document.createElement("span");
-
-    pj.className = "pj";
-    pj.textContent = pjSelected + " - ";
-    score.appendChild(pj);
+    let pjNodes = document.querySelectorAll(".pj_score");
     
-    points.className = "points";
-    points.textContent = pointsSelected;
-    score.appendChild(points);
+    if (!itsScoreAdded(pjNodes,pjSelected) || pjNodes.length === 0){
+        let pointSpan = document.createElement("span");
+        const score = document.createElement("li");
+        score.className = `pj_score ${pjSelected}`;
+        
+        pj.className = "pj_name";
+        pj.textContent = pjSelected;
+        score.appendChild(pj);
+        
+        pointSpan.className = "points";
+        pointSpan.textContent = pointsSelected;
+        score.appendChild(pointSpan);
+        scoreList.appendChild(score);
+    } else {
+        const scoredLi = document.querySelector(`.pj_score`);
+        console.log(scoredLi);
+        const points = scoredLi.querySelector(".points");
+        points.textContent = sum_score(pjSelected,pointsSelected);
+    }
+    
 
-    scoreList.appendChild(score);
 }
 
 const addMember = (member)=>{
@@ -99,16 +111,14 @@ const addMember = (member)=>{
 
 const createObject = (pj)=>{
     const pjObj = {
-        pj: pj,
+        name: pj,
         score: 0
     }
     return (pjObj);
 }
 
-
-
 const addToArray = (inventory,product) =>{
-    if ((product != undefined && product != null) && !findPj(inventory,product))
+    if ((product != undefined && product != null) && !findPjArray(inventory,product.name))
         inventory.push(product);
     else{
         console.log("No se pudo añadir el producto vacio");
@@ -117,16 +127,36 @@ const addToArray = (inventory,product) =>{
     
 }
 
-const findPj = (pjArray,pjName)=>{
+const findPjArray = (pjArray,pjName)=>{
     const pj = pjArray.find(
-        (pj) => pj.pj === pjName
+        (pj) => pj.name === pjName
     )
+
     if (pj == undefined) {
-        console.log("Personaje no encontrado");
+        console.log("Personaje no encontrado");;
         return (false);
     } 
     console.log("Personaje encontrado con exito");
-    return (true);
+    return (pj);
 }
 
-console.log(pjs);
+const itsScoreAdded = (nodeList,name) =>{
+    const itsAdded = Array.from(nodeList).filter(
+        (e) => e.textContent === name
+    );
+    console.log(itsAdded);
+    if (itsAdded)
+        return (true);
+    else
+        return(false);
+}
+
+const sum_score = (pj,points) =>{
+    let pjObj = findPjArray(pjs,pj)
+    if (pjObj){
+        pjObj.score += parseInt(points);
+    } else {
+        console.log("Intentando sumar puntos a un miembro inexistente")
+    }
+    return (pjObj.score);
+}
