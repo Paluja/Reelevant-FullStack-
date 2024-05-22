@@ -5,11 +5,28 @@
 }
 .container{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: burlywood;
 }
+
+button{
+    position: absolute;
+    top: 200px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background-color: #ba74e9;
+    border: 2px solid black;
+    font-weight: bolder;
+    cursor: pointer;
+
+    &:hover{
+        background-color: #b053ee;
+    }
+}
+
 table {
     border-collapse: collapse;
     width: 350px;
