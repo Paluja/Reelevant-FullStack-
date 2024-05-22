@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: burlywood;
+}
+table {
+    border-collapse: collapse;
+    width: 350px;
+    height:  350px;
+    margin: 0 auto;
+    background-color: #9c8b8b;
+}
+
+td {
+    border: 3px solid black;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+td:hover {
+    background-color:  #ffe2e264;
+}
+
+td:empty:before {
+    content: "";
+}
+
+td.x:before {
+    content: "X";
+    color: #ff0000;
+}
+
+td.o:before {
+    content: "O";
+    color: #0000ff;
+}
