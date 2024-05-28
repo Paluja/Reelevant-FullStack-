@@ -52,12 +52,49 @@ input{
 
 }
 
+.prev, .next{
+    /* display: inline-block; */
+    -webkit-text-stroke: 0.1em #fcfcfc;
+    background-color: #511e5c;
+    z-index: 49;
+    cursor: pointer;
+}
+
+.next{
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 0 10px 10px 0px;
+}
+
+.prev{
+    /* margin-right: 10px; */
+    padding: 5px 10px;
+    border-radius: 10px 0 0 10px;
+}
+
+.pages-container{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+li{
+    display: inline;
+    margin: 5px;
+    padding: 5px;
+    border-radius: 7px;
+    background-color: #511e5c;
+    color: #fcfcfc;
+    cursor: pointer;
+    font-size: 12px;
+}
+
 #characters {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin: 20px;
-    
 }
 
 p {

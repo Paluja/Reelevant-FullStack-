@@ -1,11 +1,15 @@
 let characters = []
+let page = 1;
+const nextBtn = document.querySelector('.next');
+const prevBtn = document.querySelector('.prev');
+const pagesContainer = document.querySelector('.pages-container');
 // Dentro de la funcion fetch hacemos la solicitud a la API de Rick and Morty
 // luego a los datos guardados le asignamos una funcion asincrona para que se ejecute
 // nada mas llegan los datos, despues esa funcion podremos volverla a llamar con los
 //datos que queramos filtrar y se nos mostran confome a esos datos 
 const getcharacter = async () => {
     try{
-        const response = await fetch('https://rickandmortyapi.com/api/character');
+        const response = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
         if(!response.ok)
             throw new Error("Error al obtener los datos");
         const data = await response.json();
@@ -15,6 +19,24 @@ const getcharacter = async () => {
         console.error('Hubo un problema con la solicitud fetch: ', error);
     }
 }
+
+
+const nextPage = () => {
+    if (page === 42) return;
+    page++;
+    console.log(page);
+    getcharacter();
+}
+
+const prevPage = () => {
+    if (page === 1) return;
+    page--;
+    console.log(page);
+    getcharacter();
+}
+
+nextBtn.addEventListener('click', nextPage);
+prevBtn.addEventListener('click', prevPage);
 
 const filterCharacters = (filter) => { // Función que filtra los personajes
     const filteredCharacters = characters.filter(obj => {
@@ -71,5 +93,18 @@ const showCharacters = (characters) => {
     });
 };
 
+
+const createList = () => {
+    for (let i = 1; i <= 42; i++) {
+        const li = document.createElement('li');
+        li.textContent = i;
+        pagesContainer.appendChild(li);
+        li.addEventListener('click', () => {
+            page = i;
+            getcharacter();
+        });
+    }
+}
+createList();
 
 document.addEventListener('DOMContentLoaded', getcharacter);
