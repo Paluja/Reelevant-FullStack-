@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #00d400;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+a,
+a:active,
+a:focus {
+    color: #a33eb9;
+    text-decoration: none;
+}
+
+.title{
+    margin-top: 60px;
+    text-align: center;
+    font-family: 'Get Schwifty';
+    font-size: 5em;
+    color: #a33eb9;
+    z-index: 50;
+    -webkit-text-stroke: 1px rgba(0,0,0,0.5);
+  
+  span {
+    font-size: 0.25em;
+  }
+}
+
+.title.middle {
+    position: absolute;
+    -webkit-text-stroke: 0.1em #FFF765;
+    z-index: 49;
+}
+
+.title.bottom {
+      position: absolute;
+    -webkit-text-stroke: 0.4em black;
+    z-index: 48;
+  }
+
+input{
+    background-color: #FFF765;
+    border: 1px solid #26744e;
+    border-radius: 5px;
+    font-size: 16px;
+    margin: 20px;
+    padding: 10px;
+    width: 50%;
+
+}
+
+#characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px;
+    
+}
+
+p {
+    color: #FFF765;
+}
+
+.character-name {
+    font-family: 'Georgia', serif;
+    font-size: 30px;
+    color: #FFF765;
+}
+
+.character-name.middle {
+    position: absolute;
+    -webkit-text-stroke: 0.1em;
+    z-index: 49;
+}
+
+.character-name.bottom {
+    -webkit-text-stroke: 0.4em black;
+  }
+
+.character{
+    background-color: #511e5c;
+    border: 1px solid #26744e;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition: all 0.5s;
+}
+
+.character:hover{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transform: scale(1.1);
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.character h2 {
+    color: #ffffff;
+    font-size: 18px;
+    margin: 0 0 10px;
+}
+
+.character p {
+    color: #cacaca;
+    margin: 3px 0;
+}
+
+.character img {
+    border: #26744e 1px solid;
+    border-radius: 50%;
+    margin: 10px 0;
+    width: 100%;
+}
+
+@font-face {
+    font-family: 'Get Schwifty';
+    src: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/3089507/get-schwifty.woff') format('woff');
+  }
