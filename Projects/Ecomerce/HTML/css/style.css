@@ -32,3 +32,8 @@ header .container .m-header__bxLogo a {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+.m-artcile{
+  margin: 0 auto;
+  width: 30%;
+}

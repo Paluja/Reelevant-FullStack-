@@ -7,31 +7,30 @@ let delOptions = {
 };
 
 const getUserOptions = {
-	method: 'GET',
-	headers: {
-		'app-id': '6655bc199d926479175f28c2'
-	}
+    method: 'GET',
+    headers: {
+        'app-id': '6655bc199d926479175f28c2'
+    }
 };
-
 
 const getUsers = async () => {
     try {
-    	const response = await fetch('https://dummyapi.io/data/v1/user?limit=10', getUserOptions);
-    	if(!response.ok)
+        const response = await fetch('https://dummyapi.io/data/v1/user?limit=10', getUserOptions);
+        if (!response.ok)
             throw new Error("Error al obtener los datos");
         const result = await response.json();
         console.log(result.data);
         user = result.data;
         showUsers(result.data);
     } catch (error) {
-    	console.error(error);
+        console.error(error);
     }
 }
 
 const deleteUser = async (userId) => {
     try {
         const response = await fetch(`https://dummyapi.io/data/v1/user/${userId}`, delOptions);
-        if(!response.ok)
+        if (!response.ok)
             throw new Error("Error al eliminar los datos");
         getUsers();
     } catch (error) {
@@ -73,7 +72,7 @@ const showUsers = (result) => {
 
         const img = document.createElement('img');
         img.src = user.picture;
-        
+
         const btnCont = document.createElement('div');
         btnCont.classList.add('btn-container');
 
@@ -84,7 +83,7 @@ const showUsers = (result) => {
         const btnDel = document.createElement('button');
         btnDel.textContent = 'Delete';
         btnCont.appendChild(btnDel);
-        
+
         userDiv.appendChild(name);
         userDiv.appendChild(img);
         userDiv.appendChild(btnCont);
@@ -150,16 +149,5 @@ const showEditUser = (user) => {
         editUser(user.id, updatedUser);
     });
 }
-
-// const updatedUser = (firstName,lastName,picture,title) =>{
-//     const user = {
-//         firstName: firstName.value,
-//         lastName: lastName.value,
-//         picture: picture.value,
-//         title: title.value
-//     }
-//     return user;
-// }
-
 
 document.addEventListener('DOMContentLoaded', getUsers);

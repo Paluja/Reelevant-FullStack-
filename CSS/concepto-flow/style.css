@@ -1,0 +1,15 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+div{
+    padding: 10px;
+    background-color: aquamarine;
+    margin-bottom: 1em;
+}
+
+div > div{
+    background-color: red;
+}

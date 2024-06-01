@@ -1,0 +1,25 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding: 40px;
+}
+
+/**/
+h1{
+    width: 10ch;
+}
+
+.ellipsis{
+    padding: 40px;
+    background-color: antiquewhite;
+}
+
+.ellipsis p{
+    height: 3lh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
