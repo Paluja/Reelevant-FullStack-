@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () =>{
             if(!response.ok)
                 throw new Error("Error al obtener los datos");
             const result = await response.json();
-            console.log(result);
+            console.log ((result));
             showDetails(result);
         } catch (error) {
             console.error(error);
